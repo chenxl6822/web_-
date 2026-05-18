@@ -27,38 +27,52 @@
 ├── data.js             # 结构化静态数据集（旅游线路、真实图片库、坐标信息）
 └── styles.css          # 全站统一响应式样式表（CSS3 Flexbox / Grid 现代布局）
 
+```
+
+---
+
 ## 🚀 本地开发与运行说明
-1. 克隆/下载项目到本地
-Bash
+
+### 1. 克隆/下载项目到本地
+
+```bash
 git clone git@github.com:chenxl6822/web_-.git
 cd web_-
-2. 启动本地服务
+
+```
+
+### 2. 启动本地服务
+
 由于项目包含动态组件（JavaScript 模块化异步加载与数据驱动渲染），直接双击 HTML 文件可能会受到浏览器跨域或部分脚本限制。推荐使用本地 Web 服务器环境打开：
 
-VS Code 用户（推荐）：安装 Live Server 插件，在编辑器中右键 index.html 选择 "Open with Live Server"。
-
-Python 用户：在项目根目录下打开终端执行：
-
-Bash
+* **VS Code 用户（推荐）**：安装 `Live Server` 插件，在编辑器中右键 `index.html` 选择 **"Open with Live Server"**。
+* **Python 用户**：在项目根目录下打开终端执行：
+```bash
 python -m http.server 8000
-随后在浏览器中输入 http://localhost:8000 即可流畅访问。
 
-🛠️ 技术栈与规范
-结构与语义：原生 HTML5 / 标准语义化标签 / WAI-ARIA 无障碍网页规范。
+```
 
-样式与视觉：现代 CSS3 / 流式网格布局 / 自适应断点（Media Queries） / 现代色彩安全规范。
 
-交互引擎：原生 JavaScript (ES6+)，纯前端实现高性能的数据驱动渲染，无需依赖沉重的第三方框架。
+随后在浏览器中输入 `http://localhost:8000` 即可流畅访问。
 
-图标支持：集成现代轻量级 lucide 图标库。
+---
 
-📝 独立版本控制与维护说明
+## 🛠️ 技术栈与规范
+
+* **结构与语义**：原生 HTML5 / 标准语义化标签 / WAI-ARIA 无障碍网页规范。
+* **样式与视觉**：现代 CSS3 / 流式网格布局 / 自适应断点（Media Queries） / 现代色彩安全规范。
+* **交互引擎**：原生 JavaScript (ES6+)，纯前端实现高性能的数据驱动渲染，无需依赖沉重的第三方框架。
+* **图标支持**：集成现代轻量级 `lucide` 图标库。
+
+---
+
+## 📝 独立版本控制与维护说明
+
 本项目采用独立的 Git 元数据管理方案，有效防止沙箱环境或本地特殊权限卡死问题。如需查看状态或在本机继续推送，请参照以下指令：
 
-Bash
+```bash
 # 查看本地独立 Git 元数据区状态
 git --git-dir=.codex-submit-git --work-tree=. status
 
 # 如果远程仓库（如 README 初始文件）存在历史冲突，使用强制强推顶替完成交付
 git --git-dir=.codex-submit-git --work-tree=. push -u origin main -f
-
