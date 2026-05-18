@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>山海行迹 - 旅游指南</title>
+    <meta
+      name="description"
+      content="山海行迹提供真实目的地图片、坐标、攻略、评论和路线建议，帮助旅行者快速规划中国城市、山水与海岛行程。"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script defer src="data.js"></script>
+    <script defer src="app.js"></script>
+  </head>
+  <body data-page="home">
+    <header class="site-header">
+      <div class="shell header-inner">
+        <a class="brand" href="index.html" aria-label="山海行迹首页">
+          <span class="brand-mark"><i data-lucide="map-pinned"></i></span>
+          <span>
+            <strong>山海行迹</strong>
+            <small>Travel Guide</small>
+          </span>
+        </a>
+        <button class="icon-btn nav-toggle" type="button" aria-label="打开导航" data-nav-toggle>
+          <i data-lucide="menu"></i>
+        </button>
+        <nav class="site-nav" data-site-nav>
+          <a href="index.html" class="active">首页</a>
+          <a href="destinations.html">目的地</a>
+          <a href="guide.html">旅游攻略</a>
+          <a href="comments.html">用户评论</a>
+          <a href="about.html">数据来源</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero hero-home">
+        <div class="hero-media">
+          <img
+            src="https://commons.wikimedia.org/wiki/Special:FilePath/West_Lake_Pavilion_and_Water_Lilies,_Hangzhou_120529_1.jpg"
+            alt="杭州西湖荷花与亭台"
+            class="hero-image hero-image-main"
+          />
+          <img
+            src="https://commons.wikimedia.org/wiki/Special:FilePath/Forbidden_City_%2854449398364%29.jpg"
+            alt="北京故宫建筑群"
+            class="hero-image hero-image-side one"
+          />
+          <img
+            src="https://commons.wikimedia.org/wiki/Special:FilePath/Gulangyu_Island_20191130144138.jpg"
+            alt="鼓浪屿海岛风景"
+            class="hero-image hero-image-side two"
+          />
+        </div>
+        <div class="shell hero-content">
+          <p class="eyebrow">真实图片 · 真实坐标 · 可交互地图</p>
+          <h1>把值得走访的中国目的地，做成一张清晰的旅行地图</h1>
+          <p class="lead">
+            从城市文化、海岛休闲到山水风光，山海行迹整理目的地信息、路线建议、用户评论和地图位置，
+            帮你更快找到适合自己的下一站。
+          </p>
+          <form class="quick-search" action="destinations.html" method="get">
+            <label class="sr-only" for="home-search">搜索目的地</label>
+            <input id="home-search" name="q" type="search" placeholder="输入城市、景点或关键词" />
+            <button class="btn btn-primary" type="submit">
+              <i data-lucide="search"></i>
+              搜索
+            </button>
+          </form>
+          <div class="hero-stats">
+            <article>
+              <strong>6+</strong>
+              <span>精选目的地</span>
+            </article>
+            <article>
+              <strong>1</strong>
+              <span>互动地图</span>
+            </article>
+            <article>
+              <strong>4</strong>
+              <span>旅行栏目</span>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="band">
+        <div class="shell section-head">
+          <div>
+            <p class="eyebrow">精选目的地</p>
+            <h2>把真实的旅行体验，整理成好用的入口</h2>
+          </div>
+          <a class="text-link" href="destinations.html">
+            查看全部
+            <i data-lucide="arrow-right"></i>
+          </a>
+        </div>
+        <div class="shell destination-grid" data-featured-grid></div>
+      </section>
+
+      <section class="band band-alt">
+        <div class="shell split-layout">
+          <div class="info-panel">
+            <p class="eyebrow">旅行工具</p>
+            <h2>找地点、看攻略、查地图，一站完成</h2>
+            <ul class="check-list">
+              <li><i data-lucide="check"></i> 多栏目浏览：首页、目的地、攻略、评论、数据来源</li>
+              <li><i data-lucide="check"></i> 支持搜索、筛选、排序、收藏和评论互动</li>
+              <li><i data-lucide="check"></i> 展示地理坐标、地图位置和周边景点</li>
+              <li><i data-lucide="check"></i> 手机和桌面端都能顺畅浏览</li>
+            </ul>
+          </div>
+          <div class="story-panel">
+            <p class="eyebrow">旅行方式</p>
+            <h3>不用在零散信息里来回翻找</h3>
+            <p>
+              目的地卡片、攻略时间线、评论区和地图被组织成完整的浏览流程。
+              打开就能找地方、看图片、看路线，再把喜欢的地方加入收藏。
+            </p>
+            <div class="mini-chips" data-home-tags></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="band">
+        <div class="shell section-head">
+          <div>
+            <p class="eyebrow">热门路线</p>
+            <h2>按假期长度来选，不绕路</h2>
+          </div>
+        </div>
+        <div class="shell route-grid" data-route-grid></div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="shell footer-inner">
+        <p>山海行迹 · 旅游指南网站</p>
+        <p>图片与坐标基于公开资料整理，尽量保持真实。</p>
+      </div>
+    </footer>
+  </body>
+</html>

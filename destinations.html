@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>目的地列表 - 山海行迹</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script defer src="data.js"></script>
+    <script defer src="app.js"></script>
+  </head>
+  <body data-page="destinations">
+    <header class="site-header">
+      <div class="shell header-inner">
+        <a class="brand" href="index.html" aria-label="山海行迹 首页">
+          <span class="brand-mark"><i data-lucide="map-pinned"></i></span>
+          <span><strong>山海行迹</strong><small>Travel Guide</small></span>
+        </a>
+        <button class="icon-btn nav-toggle" type="button" aria-label="打开导航" data-nav-toggle>
+          <i data-lucide="menu"></i>
+        </button>
+        <nav class="site-nav" data-site-nav>
+          <a href="index.html">首页</a>
+          <a href="destinations.html" class="active">目的地</a>
+          <a href="guide.html">旅游攻略</a>
+          <a href="comments.html">用户评论</a>
+          <a href="about.html">数据来源</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="page-shell">
+      <section class="page-hero">
+        <div>
+          <p class="eyebrow">目的地列表</p>
+          <h1>搜索、筛选、排序，一次看清去哪儿玩</h1>
+          <p class="lead">
+            这里把城市、海岛、古城、山水和亲子类目的地放在同一页，方便按时间、预算和偏好快速决策。
+          </p>
+        </div>
+        <div class="hero-sidecard">
+          <p>当前可选</p>
+          <strong data-destination-count>0</strong>
+          <span>个目的地</span>
+        </div>
+      </section>
+
+      <section class="toolbar">
+        <div class="field field-grow">
+          <label for="search">搜索</label>
+          <div class="input-wrap">
+            <i data-lucide="search"></i>
+            <input id="search" type="search" placeholder="城市、景点、食物、关键词" data-search />
+          </div>
+        </div>
+        <div class="field">
+          <label for="region">区域</label>
+          <select id="region" data-region>
+            <option value="all">全部区域</option>
+            <option value="华北">华北</option>
+            <option value="华东">华东</option>
+            <option value="西南">西南</option>
+            <option value="华南">华南</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="sort">排序</label>
+          <select id="sort" data-sort>
+            <option value="featured">推荐优先</option>
+            <option value="popular">人气优先</option>
+            <option value="budget">预算更低</option>
+            <option value="alphabet">名称顺序</option>
+          </select>
+        </div>
+        <button class="btn btn-ghost" type="button" data-reset-filters>
+          <i data-lucide="rotate-ccw"></i>
+          重置
+        </button>
+      </section>
+
+      <section class="list-layout">
+        <aside class="filter-panel">
+          <h2>旅行偏好</h2>
+          <div class="chip-group" data-tag-filters></div>
+          <div class="meta-card">
+            <p>收藏夹</p>
+            <strong data-favorite-count>0</strong>
+            <span>个目的地已收藏</span>
+          </div>
+          <a class="btn btn-primary full-width" href="guide.html">
+            <i data-lucide="compass"></i>
+            查看攻略
+          </a>
+        </aside>
+        <div class="destination-grid destination-grid-list" data-destination-grid></div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="shell footer-inner">
+        <p>山海行迹 · 旅游指南网站</p>
+        <p>筛选和排序逻辑均在前端完成，帮助你更快找到合适的旅行目的地。</p>
+      </div>
+    </footer>
+  </body>
+</html>

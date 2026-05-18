@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>旅游攻略 - 山海行迹</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script defer src="data.js"></script>
+    <script defer src="app.js"></script>
+  </head>
+  <body data-page="guide">
+    <header class="site-header">
+      <div class="shell header-inner">
+        <a class="brand" href="index.html" aria-label="山海行迹首页">
+          <span class="brand-mark"><i data-lucide="map-pinned"></i></span>
+          <span><strong>山海行迹</strong><small>Travel Guide</small></span>
+        </a>
+        <button class="icon-btn nav-toggle" type="button" aria-label="打开导航" data-nav-toggle>
+          <i data-lucide="menu"></i>
+        </button>
+        <nav class="site-nav" data-site-nav>
+          <a href="index.html">首页</a>
+          <a href="destinations.html">目的地</a>
+          <a href="guide.html" class="active">旅游攻略</a>
+          <a href="comments.html">用户评论</a>
+          <a href="about.html">数据来源</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="page-shell">
+      <section class="page-hero">
+        <div>
+          <p class="eyebrow">旅游攻略</p>
+          <h1>按季节、天数和旅行风格，快速匹配行程</h1>
+          <p class="lead">这里整理了不同旅行类型的路线建议和出行清单，适合周末短途、城市文化游和海岛度假。</p>
+        </div>
+        <div class="hero-sidecard">
+          <p>旅行方案</p>
+          <strong data-guide-count>0</strong>
+          <span>条建议路线</span>
+        </div>
+      </section>
+
+      <section class="toolbar toolbar-compact">
+        <button class="segmented active" type="button" data-guide-filter="all">全部</button>
+        <button class="segmented" type="button" data-guide-filter="city">城市文化</button>
+        <button class="segmented" type="button" data-guide-filter="sea">海岛休闲</button>
+        <button class="segmented" type="button" data-guide-filter="river">山水风光</button>
+        <button class="segmented" type="button" data-guide-filter="family">亲子慢游</button>
+      </section>
+
+      <section class="guide-layout">
+        <article class="guide-panel">
+          <h2>行程建议</h2>
+          <div class="timeline" data-itinerary></div>
+        </article>
+        <aside class="guide-panel">
+          <h2>装备清单</h2>
+          <div class="checklist" data-packing></div>
+        </aside>
+      </section>
+
+      <section class="band band-alt">
+        <div class="shell split-layout">
+          <div class="story-panel">
+            <p class="eyebrow">出行提示</p>
+            <h3>把时间留给值得停留的地方</h3>
+            <p>
+              每条路线都尽量控制交通折返，把核心景点、用餐节奏和休息时间放在一起考虑，
+              让旅行更轻松，也更容易按自己的体力调整。
+            </p>
+          </div>
+          <div class="info-panel">
+            <p class="eyebrow">热门主题</p>
+            <div class="mini-chips" data-guide-tags></div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="shell footer-inner">
+        <p>山海行迹 · 旅游指南网站</p>
+        <p>攻略内容会随目的地数据一起更新，方便快速规划不同类型的行程。</p>
+      </div>
+    </footer>
+  </body>
+</html>

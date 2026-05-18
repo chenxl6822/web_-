@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>目的地详情 - 山海行迹</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script defer src="data.js"></script>
+    <script defer src="app.js"></script>
+  </head>
+  <body data-page="destination">
+    <header class="site-header">
+      <div class="shell header-inner">
+        <a class="brand" href="index.html" aria-label="山海行迹 首页">
+          <span class="brand-mark"><i data-lucide="map-pinned"></i></span>
+          <span><strong>山海行迹</strong><small>Travel Guide</small></span>
+        </a>
+        <button class="icon-btn nav-toggle" type="button" aria-label="打开导航" data-nav-toggle>
+          <i data-lucide="menu"></i>
+        </button>
+        <nav class="site-nav" data-site-nav>
+          <a href="index.html">首页</a>
+          <a href="destinations.html" class="active">目的地</a>
+          <a href="guide.html">旅游攻略</a>
+          <a href="comments.html">用户评论</a>
+          <a href="about.html">数据来源</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="page-shell">
+      <section class="destination-hero" data-destination-hero></section>
+      <section class="detail-grid">
+        <article class="detail-main">
+          <section class="detail-block">
+            <div class="block-head">
+              <h2>核心信息</h2>
+              <button class="btn btn-ghost" type="button" data-favorite-toggle>
+                <i data-lucide="heart"></i>
+                收藏
+              </button>
+            </div>
+            <div class="facts-grid" data-facts></div>
+          </section>
+
+          <section class="detail-block">
+            <h2>推荐看点</h2>
+            <div class="spot-list" data-highlights></div>
+          </section>
+
+          <section class="detail-block">
+            <h2>吃住行建议</h2>
+            <div class="three-col" data-logistics></div>
+          </section>
+        </article>
+
+        <aside class="detail-side">
+          <section class="detail-block map-block">
+            <div class="block-head">
+              <h2>地图位置</h2>
+              <a class="text-link" data-open-map target="_blank" rel="noreferrer">
+                在 OpenStreetMap 打开
+                <i data-lucide="external-link"></i>
+              </a>
+            </div>
+            <div id="spot-map" class="map-panel"></div>
+          </section>
+
+          <section class="detail-block">
+            <h2>附近景点</h2>
+            <div class="nearby-list" data-nearby></div>
+          </section>
+        </aside>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="shell footer-inner">
+        <p>山海行迹 · 旅游指南网站</p>
+        <p>详情页包含地图、景点和出行提示，方便旅行前快速了解目的地。</p>
+      </div>
+    </footer>
+  </body>
+</html>
