@@ -397,16 +397,47 @@ function initDestinationDetail() {
 
   if (hero) {
     hero.innerHTML = `
-      <img class="detail-hero-image" src="${destination.image}" alt="${destination.name}" />
+      <div class="detail-image-card">
+        <img class="detail-hero-image" src="${destination.image}" alt="${destination.name}" />
+        <div class="detail-image-overlay">
+          <span>${destination.label}</span>
+          <strong>${destination.name}</strong>
+          <small>${destination.city} · ${destination.province}</small>
+        </div>
+      </div>
       <div class="detail-hero-copy">
-        <span class="badge">${destination.region}</span>
-        <h1>${destination.name}</h1>
-        <p>${destination.overview}</p>
-        <div class="card-meta">
-          <span class="chip">${destination.city} · ${destination.province}</span>
-          <span class="chip">${destination.season}</span>
-          <span class="chip">${destination.duration}</span>
-          <span class="chip">${destination.budget}</span>
+        <div class="detail-hero-top">
+          <span class="badge">${destination.region}</span>
+          <div class="detail-hero-summary">
+            <article>
+              <small>适合主题</small>
+              <strong>${destination.tag}</strong>
+            </article>
+            <article>
+              <small>推荐季节</small>
+              <strong>${destination.season}</strong>
+            </article>
+            <article>
+              <small>建议时长</small>
+              <strong>${destination.duration}</strong>
+            </article>
+            <article>
+              <small>预算参考</small>
+              <strong>${destination.budget}</strong>
+            </article>
+          </div>
+          <div class="detail-hero-tip">
+            <i data-lucide="sparkles"></i>
+            <span>${destination.tips[0]}</span>
+          </div>
+        </div>
+        <div class="detail-hero-bottom">
+          <h1>${destination.name}</h1>
+          <p>${destination.overview}</p>
+          <div class="card-meta">
+            <span class="chip">${destination.city} · ${destination.province}</span>
+            <span class="chip">${destination.coordinates.lat.toFixed(4)}, ${destination.coordinates.lng.toFixed(4)}</span>
+          </div>
         </div>
       </div>`;
   }
