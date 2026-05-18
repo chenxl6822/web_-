@@ -5,3 +5,4 @@ destinations-mobile.png
 server.err.txt
 server.out.txt
 .codex-submit-git/
+.local-server.cjs

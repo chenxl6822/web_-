@@ -36,53 +36,93 @@
     </header>
 
     <main>
-      <section class="hero hero-home">
-        <div class="hero-media">
+      <section class="hero hero-home" data-hero-carousel>
+        <div class="hero-slider" aria-hidden="true">
           <img
+            class="hero-slide active"
             src="https://commons.wikimedia.org/wiki/Special:FilePath/West_Lake_Pavilion_and_Water_Lilies,_Hangzhou_120529_1.jpg"
-            alt="杭州西湖荷花与亭台"
-            class="hero-image hero-image-main"
+            alt=""
+            data-slide="0"
           />
           <img
+            class="hero-slide"
             src="https://commons.wikimedia.org/wiki/Special:FilePath/Forbidden_City_%2854449398364%29.jpg"
-            alt="北京故宫建筑群"
-            class="hero-image hero-image-side one"
+            alt=""
+            data-slide="1"
           />
           <img
+            class="hero-slide"
             src="https://commons.wikimedia.org/wiki/Special:FilePath/Gulangyu_Island_20191130144138.jpg"
-            alt="鼓浪屿海岛风景"
-            class="hero-image hero-image-side two"
+            alt=""
+            data-slide="2"
           />
         </div>
-        <div class="shell hero-content">
-          <p class="eyebrow">真实图片 · 真实坐标 · 可交互地图</p>
-          <h1>把值得走访的中国目的地，做成一张清晰的旅行地图</h1>
-          <p class="lead">
-            从城市文化、海岛休闲到山水风光，山海行迹整理目的地信息、路线建议、用户评论和地图位置，
-            帮你更快找到适合自己的下一站。
-          </p>
-          <form class="quick-search" action="destinations.html" method="get">
-            <label class="sr-only" for="home-search">搜索目的地</label>
-            <input id="home-search" name="q" type="search" placeholder="输入城市、景点或关键词" />
-            <button class="btn btn-primary" type="submit">
-              <i data-lucide="search"></i>
-              搜索
-            </button>
-          </form>
-          <div class="hero-stats">
-            <article>
-              <strong>6+</strong>
-              <span>精选目的地</span>
-            </article>
-            <article>
-              <strong>1</strong>
-              <span>互动地图</span>
-            </article>
-            <article>
-              <strong>4</strong>
-              <span>旅行栏目</span>
-            </article>
+
+        <div class="shell hero-inner">
+          <div class="hero-content">
+            <p class="eyebrow">真实图片 · 真实坐标 · 可交互地图</p>
+            <h1>把值得走访的中国目的地，做成一张清晰的旅行地图</h1>
+            <p class="lead">
+              从城市文化、海岛休闲到山水风光，山海行迹整理目的地信息、路线建议、用户评论和地图位置，
+              帮你更快找到适合自己的下一站。
+            </p>
+            <form class="quick-search" action="destinations.html" method="get">
+              <label class="sr-only" for="home-search">搜索目的地</label>
+              <input id="home-search" name="q" type="search" placeholder="输入城市、景点或关键词" />
+              <button class="btn btn-primary" type="submit">
+                <i data-lucide="search"></i>
+                搜索
+              </button>
+            </form>
+            <div class="hero-stats">
+              <article>
+                <strong>6+</strong>
+                <span>精选目的地</span>
+              </article>
+              <article>
+                <strong>1</strong>
+                <span>互动地图</span>
+              </article>
+              <article>
+                <strong>4</strong>
+                <span>旅行栏目</span>
+              </article>
+            </div>
           </div>
+
+          <aside class="hero-digest" aria-label="目的地轮播">
+            <div class="hero-digest-head">
+              <p>正在推荐</p>
+              <strong data-hero-title>杭州西湖</strong>
+              <span data-hero-subtitle>湖岸、古桥、亭台、茶园</span>
+            </div>
+            <div class="hero-progress" aria-hidden="true">
+              <span data-hero-progress></span>
+            </div>
+            <div class="hero-thumbs" role="tablist" aria-label="切换推荐目的地">
+              <button class="hero-thumb active" type="button" data-hero-thumb="0" aria-label="切换到杭州西湖">
+                <img
+                  src="https://commons.wikimedia.org/wiki/Special:FilePath/West_Lake_Pavilion_and_Water_Lilies,_Hangzhou_120529_1.jpg"
+                  alt=""
+                />
+                <span>杭州西湖</span>
+              </button>
+              <button class="hero-thumb" type="button" data-hero-thumb="1" aria-label="切换到北京故宫">
+                <img
+                  src="https://commons.wikimedia.org/wiki/Special:FilePath/Forbidden_City_%2854449398364%29.jpg"
+                  alt=""
+                />
+                <span>北京故宫</span>
+              </button>
+              <button class="hero-thumb" type="button" data-hero-thumb="2" aria-label="切换到厦门鼓浪屿">
+                <img
+                  src="https://commons.wikimedia.org/wiki/Special:FilePath/Gulangyu_Island_20191130144138.jpg"
+                  alt=""
+                />
+                <span>厦门鼓浪屿</span>
+              </button>
+            </div>
+          </aside>
         </div>
       </section>
 
