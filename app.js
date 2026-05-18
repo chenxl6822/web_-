@@ -124,6 +124,48 @@ function initNav() {
   toggle.addEventListener("click", () => nav.classList.toggle("open"));
 }
 
+function initHeroCarousel() {
+  const root = $("[data-hero-carousel]");
+  if (!root) return;
+
+  const slides = $$("[data-slide]", root);
+  const thumbs = $$("[data-hero-thumb]", root);
+  const title = $("[data-hero-title]", root);
+  const subtitle = $("[data-hero-subtitle]", root);
+  const progress = $("[data-hero-progress]", root);
+  const labels = [
+    { title: "杭州西湖", subtitle: "湖岸、古桥、亭台、茶园" },
+    { title: "北京故宫", subtitle: "中轴线、红墙金瓦、宫殿建筑" },
+    { title: "厦门鼓浪屿", subtitle: "海岛、老建筑、慢节奏街巷" },
+  ];
+  let activeIndex = 0;
+  let timer = null;
+
+  const show = (index) => {
+    activeIndex = (index + slides.length) % slides.length;
+    slides.forEach((slide, slideIndex) => slide.classList.toggle("active", slideIndex === activeIndex));
+    thumbs.forEach((thumb, thumbIndex) => thumb.classList.toggle("active", thumbIndex === activeIndex));
+    if (title) title.textContent = labels[activeIndex].title;
+    if (subtitle) subtitle.textContent = labels[activeIndex].subtitle;
+    if (progress) progress.style.transform = `translateX(${activeIndex * 100}%)`;
+  };
+
+  const start = () => {
+    window.clearInterval(timer);
+    timer = window.setInterval(() => show(activeIndex + 1), 4200);
+  };
+
+  thumbs.forEach((thumb) => {
+    thumb.addEventListener("click", () => {
+      show(Number(thumb.dataset.heroThumb || 0));
+      start();
+    });
+  });
+
+  show(0);
+  start();
+}
+
 function initHome() {
   const featuredGrid = $("[data-featured-grid]");
   const routeGrid = $("[data-route-grid]");
@@ -660,6 +702,7 @@ function initCommonCollections() {
 document.addEventListener("DOMContentLoaded", () => {
   initNav();
   initCommonCollections();
+  initHeroCarousel();
 
   const page = document.body.dataset.page;
   if (page === "home") initHome();
